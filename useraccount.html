@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="#"><img src="logo.png" alt="logo">
+            <span class="sitename">Journal Publication Portal</span></a>
+        </div>
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="#help">Help</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#account">Account</a></li>
+        </ul>
+    </nav>
+
+    <!--user profile-->
+    <div class="content-left">
+        <div class="profile-picture-section">
+            <img id="profile-picture" class="profile-picture" src="defaultpic.jpg" alt="Profile Picture">
+            <div class="edit-button">
+                <label for="file-input" class="edit-icon">
+                    <img src="editicon.png" alt="Edit Icon">
+                </label>
+                <input id="file-input" type="file" accept="image/*">
+            </div>
+        </div>
+        <div class="account-container">
+            <div class="user-section"> 
+                <h1>Name</h1>
+                <p>Designation</p>
+            </div>
+        </div>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="content-right">
+        <div class="user-section-right"> 
+            <p>H-index: 9</p>
+            <p>H5 Median: 7</p>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+        <!-- Left Side: Form Names List -->
+        <div class="form-list">
+          <ul>
+            <li><a href="javascript:void(0);" onclick="showForm('UploadedPapers')">Uploaded Papers</a></li>
+            <li><a href="javascript:void(0);" onclick="showForm('Upload_a_paper')">Upload a Paper</a></li>
+            <li><a href="javascript:void(0);" onclick="showForm('Edit_profile')">Edit your profile</a></li>
+          </ul>
+        </div>
+    
+        <!-- Right Side: Forms -->
+        <div class="form-display">
+          <div id="UploadedPapers" class="form-content">
+            <h2>Uploaded Papers</h2>
+            <form>
+              <h3>1. Paper 1</h3>
+              <p>Paper description</p><br>
+              <h3>2.Paper 2</h3>
+              <p>Paper description</p>
+            </form>
+          </div>
+    
+          <div id="Upload_a_paper" class="form-content" style="display: none;">
+            <h2>Upload a paper</h2>
+            <form>
+                <div class="form-group">
+                    <label for="title">Paper Title:</label>
+                    <input type="text" id="title" placeholder="Enter paper title">
+                </div>
+                <div class="form-group">
+                    <label for="abstract">Abstract:</label>
+                    <textarea id="abstract" rows="5" placeholder="Within 300 words"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="authors">Authors:</label>
+                    <input type="text" id="authors" placeholder="Enter author names">
+                </div>
+                <div class="add-author">
+                    <!--add button--><strong>+</strong><span>Add more authors</span>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject">
+                        <option value="">Select subject</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="math">Mathematics</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="domain">Domain:</label>
+                    <select id="domain">
+                        <option value="">Select domain</option>
+                        <option value="ai">AI</option>
+                        <option value="ml">ML</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="journal">Journal:</label>
+                    <input type="text" id="journal" placeholder="Enter journal name">
+                </div>
+                <div class="form-group">
+                    <label for="volume">Volume:</label>
+                    <input type="text" id="volume" placeholder="Enter volume">
+                </div>
+                <div class="form-group">
+                    <label for="published">Published on:</label>
+                    <input type="date" id="published">
+                </div>
+                <div class="form-group">
+                    <label for="upload">Upload option:</label>
+                    <select id="upload">
+                        <option value="">Type your paper</option>
+                        <option value="file">Upload a file</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+          </div>
+    
+          <div id="Edit_profile" class="form-content" style="display: none;">
+            <h2>Edit your Profile</h2>
+            <form>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    
+</body>    
+     <script>
+            const fileInput = document.getElementById('file-input');
+            const profilePicture = document.getElementById('profile-picture');
+    
+            fileInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        profilePicture.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            })
+
+
+            function showForm(formId) {
+            // Hide all forms
+            const forms = document.querySelectorAll('.form-content');
+            forms.forEach(form => {
+            form.style.display = 'none';
+            });
+
+            // Show the selected form
+            const selectedForm = document.getElementById(formId);
+            selectedForm.style.display = 'block';
+        }
+        </script>
