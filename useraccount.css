@@ -1,0 +1,176 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;  
+    background-color: #a9a7a7; 
+    color: white;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .logo-container img {
+    height: 60px;
+    width: auto;
+    margin-right: 10px; /* Space between logo and sitename */
+}
+
+.navbar .logo-container .sitename {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin: 0 10px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #666565;
+    border-radius: 5px;
+}
+
+/*profile picture*/
+
+
+/* this style was no added newly added to the content-left class*/
+.content-left{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    top: 50px;
+    /* left: 50px;  */
+}
+
+.profile-picture-section {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    position: relative; /*  made changes absolute to relative */
+    text-align: center;
+}
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    object-fit: cover;
+}
+.edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.edit-icon img {
+    width: 15px;
+    height: 15px;
+}
+input[type="file"] {
+    display: none;
+}
+
+.account-container{
+    display: flex; /*changes made */
+    flex-direction: column; /* changes made */
+    justify-content: center; /* changes made */
+    align-items: center; /*changes made */
+    padding: 20px;
+    width: 300px;
+    height: 200px;  
+    margin-left: 10px;
+}
+
+.user-section {
+    display: flex;
+    flex-direction: column; /* Stack username and designation vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical-line {
+    width: 1px; /* Width of the line */
+    height: 20%; /* Height of the line */
+    background-color: black; /* Color of the line */
+    position: absolute; /* Allow positioning anywhere on the page */
+    top: 150px; /* Distance from the top of the page */
+    left: 600px; /* Position the line at 200px from the left */
+  }
+
+.content-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 200px;
+    left: 700px;
+    position: absolute;
+}
+
+.user-section-right{
+    flex-direction: column; /* Stack username and designation vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+/*form*/
+.container {
+    display: flex;
+    justify-content: row;
+    align-items: center;
+}
+
+.form-list{
+    width: 50%;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+}
+
+.form-list a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+  
